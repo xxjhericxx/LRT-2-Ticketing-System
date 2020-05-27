@@ -306,6 +306,12 @@ int main(){
 return 0;} // End of Main
 
 // Function Definitions
+
+/**
+ * @return station name
+ * @param a station Index
+ */
+
 string StationNames(int a){
 	string stationNames[11] = {"Recto     ","Legarda   ","Pureza    ",
 							   "V.Mapa    ","J.Ruiz    ","Gilmore   ",
@@ -313,6 +319,13 @@ string StationNames(int a){
 							   "Katipunan ","Santolan  "};
 	return stationNames[a];
 }
+
+/**
+ * Fare FROM station TO destination
+ * @returns Fare
+ * @param a is where station you entered
+ * @param b is where is your destination
+ */
 
 int FareMatrix(int a, int b){
 	int
@@ -330,15 +343,28 @@ int FareMatrix(int a, int b){
 	return fareMatrix[a][b];
 }
 
+/**
+ * Just a design
+ * too lazy to type long asterisks :)
+ */ 
+
 void LineDesign(){
 	cout << "*******************************************************************************\n";
 }
+
+/**
+ * Just a welcome note after you initiated the program
+ */
 
 void StartingHeader(){
 	LineDesign();
 	cout << "                         Welcome to LRT 2 Ticketing System      \n";
 	LineDesign();
 }
+
+/**
+ * Displays the station list
+ */
 
 void StationsList(){
 	int i,x=0;
@@ -354,6 +380,11 @@ void StationsList(){
 	}
 }
 
+/**
+ * Station banner that tells your current location
+ * @param a the character you entered as your current station
+ */
+
 void StationHeader(char a){
 	int x=ConvertChar(a);
 	LineDesign();
@@ -361,12 +392,22 @@ void StationHeader(char a){
 	LineDesign();
 }
 
+/**
+ * Displays all your preferred destination
+ * @param a the character you entered as your preferred destination
+ */
+
 void ShowDestination(char a){
 	int x=0;
 	x = ConvertChar(a);
 	UpdateStationsList(x);
 }
 
+/**
+ * Converts alphabetical character into int value
+ * @returns int value
+ * @param a the character entered
+ */
 
 int ConvertChar(char a){
 		int i,x=-1;
@@ -381,6 +422,12 @@ int ConvertChar(char a){
 			}
 	return x;
 }
+
+/**
+ * Converts numerical character into an int value
+ * @returns int value
+ * @param a the int entered
+ */
 
 int ConvertInt(char a){
 	int i, x=-1;
@@ -397,6 +444,11 @@ int ConvertInt(char a){
 		}
 	return x;
 }
+
+/**
+ * Updates the stations lists in your chosen current location
+ * @param a index of the station
+ */
 
 void UpdateStationsList(int a){
 	int i=0;
@@ -417,6 +469,11 @@ void UpdateStationsList(int a){
 		}
 	}
 }
+
+/**
+ * This is where the transaction is happening
+ * @param a your chosen destination
+ */
 
 void ChosenDestination(char a){
 	int i,j,x=0,y=0,totalPrice=0,quantity=0;
